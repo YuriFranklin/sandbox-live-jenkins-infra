@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: sandbox-tls
+  namespace: sandbox-app
+spec:
+  commonName: yuri.dev.br
+  secretName: sandbox-tls-secret
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+    - sandbox.yuri.dev.br
