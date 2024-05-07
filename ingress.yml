@@ -17,7 +17,7 @@ spec:
     - host: sandbox.yuri.dev.br
       http:
         paths:
-          - path: "/"
+          - path: /
             pathType: Prefix
             backend:
               service:

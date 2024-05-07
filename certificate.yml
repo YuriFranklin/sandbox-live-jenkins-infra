@@ -4,7 +4,7 @@ metadata:
   name: sandbox-tls
   namespace: sandbox-app
 spec:
-  commonName: yuri.dev.br
+  commonName: sandbox.yuri.dev.br
   secretName: sandbox-tls-secret
   issuerRef:
     name: letsencrypt-prod
