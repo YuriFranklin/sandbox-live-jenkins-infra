@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: sandbox-app-ingress
+  namespace: sandbox-app
+  annotations:
+    cert-manager.io/issuer: "letsencrypt-stage"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - sandbox.yuri.dev.br
+      secretName: sandbox-tls-secret
+  rules:
+    - host: sandbox.yuri.dev.br
+      http:
+        paths:
+          - path: "/"
+            pathType: Prefix
+            backend:
+              service:
+                name: sandbox-app
+                port:
+                  number: 5000
