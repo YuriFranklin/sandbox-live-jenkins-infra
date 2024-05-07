@@ -21,4 +21,4 @@ spec:
           ports:
             - containerPort: 5000
       imagePullSecrets:
-        - name: nexus-registry-secret
+        - name: registry-secret
